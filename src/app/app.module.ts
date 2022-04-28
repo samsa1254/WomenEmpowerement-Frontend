@@ -8,6 +8,8 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { LeftbarComponent } from './Components/leftbar/leftbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { EventsComponent } from './Pages/events/events.component';
+import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -18,10 +20,12 @@ import { EventsComponent } from './Pages/events/events.component';
     LeftbarComponent,
     FooterComponent,
     EventsComponent,
+    AcceuilComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
