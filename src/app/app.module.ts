@@ -18,6 +18,8 @@ import { AddOfferComponent } from './Pages/offer-list/add-offer/add-offer.compon
 import { UpdateOfferComponent } from './Pages/offer-list/update-offer/update-offer.component';
 import { OfferListComponent } from './Pages/offer-list/offer-list.component';
 import { OfferDetailsComponent } from './Pages/offer-list/offer-details/offer-details.component';
+import { CreatepostComponent } from './Pages/acceuil/createpost/createpost.component';
+import { UpdatepostComponent } from './Pages/acceuil/updatepost/updatepost.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { OfferDetailsComponent } from './Pages/offer-list/offer-details/offer-de
     UpdateOfferComponent,
     OfferListComponent,
     OfferDetailsComponent,
+    CreatepostComponent,
+    UpdatepostComponent,
 
   ],
   imports: [
