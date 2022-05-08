@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+      <div class="row">
+        <h3 class="text-center"> Create Cagnotte </h3>
+        <hr />
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()">
+  
+            <div class="form-group">
+              <label>Amount</label>
+              <input type="number" class="form-control" id="Name" [(ngModel)]="Cagnot.amount"
+                     name="name">
+            </div>
+  
+            <br />
+            <button class="btn btn-success" type="submit">Submit</button>
+            <button routerLink="/home/cagnottes"   style="margin-left: 420px" class="btn btn-warning" type="Cancel">Cancel</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
