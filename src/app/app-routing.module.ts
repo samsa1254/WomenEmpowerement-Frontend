@@ -10,6 +10,9 @@ import { OfferDetailsComponent } from './Pages/offer-list/offer-details/offer-de
 import { AddEventComponent } from './Pages/events/add-event/add-event.component';
 import { EventDatailsComponent } from './Pages/events/event-datails/event-datails.component';
 import { EventModifyComponent } from './Pages/events/event-modify/event-modify.component';
+import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
+import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
+import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
 
 const routes: Routes = [
   {
@@ -20,6 +23,10 @@ const routes: Routes = [
       { path: 'addEvent', component: AddEventComponent},
       { path: 'detailsEvent/:id', component: EventDatailsComponent},
       { path: 'updateEvent/:id', component: EventModifyComponent},
+
+      { path: 'cagnottes', component: CagnottesComponent },
+      { path: 'addcagnotte', component: AddCagnotteComponent},
+      { path: 'detailscagnotte/:id', component: DetailsCagnottesComponent},
 
       { path: 'addoffer', component: AddOfferComponent},
       { path: 'Offer', component: OfferListComponent},

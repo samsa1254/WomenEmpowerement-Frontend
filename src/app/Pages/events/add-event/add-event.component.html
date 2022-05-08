@@ -8,19 +8,19 @@
 
             <div class="form-group">
                 <label>dateDebut</label>
-                <input type="datetime-local" class="form-control" id="dateDebut" [(ngModel)]="offer.dateDebut"
+                <input type="datetime-local" class="form-control" id="dateDebut" [(ngModel)]="ev.dateDebut"
                        name="dateDebut">
               </div>
 
               <div class="form-group">
                 <label>dateFin</label>
-                <input type="datetime-local" class="form-control" id="dateFin" [(ngModel)]="offer.dateFin"
+                <input type="datetime-local" class="form-control" id="dateFin" [(ngModel)]="ev.dateFin"
                        name="dateFin">
               </div>
 
           <div class="form-group">
             <label>description</label>
-            <input type="text" class="form-control" id="description" [(ngModel)]="offer.description"
+            <input type="text" class="form-control" id="description" [(ngModel)]="ev.description"
                    name="description">
           </div>
 
@@ -34,7 +34,7 @@
                   class="form-control"
                   name="type"
                   id="type"
-                  [(ngModel)]="offer.type">
+                  [(ngModel)]="ev.type">
                   <option value="Charity">
                     Charity
                   </option>
@@ -55,7 +55,7 @@
 
           <div class="form-group">
             <label>title</label>
-            <input type="text" class="form-control" id="title" [(ngModel)]="offer.title"
+            <input type="text" class="form-control" id="title" [(ngModel)]="ev.title"
                    name="title">
           </div>
 
