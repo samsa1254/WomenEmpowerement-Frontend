@@ -18,9 +18,14 @@ import { AddOfferComponent } from './Pages/offer-list/add-offer/add-offer.compon
 import { UpdateOfferComponent } from './Pages/offer-list/update-offer/update-offer.component';
 import { OfferListComponent } from './Pages/offer-list/offer-list.component';
 import { OfferDetailsComponent } from './Pages/offer-list/offer-details/offer-details.component';
+
+import { CreatepostComponent } from './Pages/acceuil/createpost/createpost.component';
+import { UpdatepostComponent } from './Pages/acceuil/updatepost/updatepost.component';
+
 import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
 import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
 import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
+
 
 @NgModule({
   declarations: [
@@ -38,9 +43,14 @@ import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/d
     UpdateOfferComponent,
     OfferListComponent,
     OfferDetailsComponent,
+
+    CreatepostComponent,
+    UpdatepostComponent,
+
     CagnottesComponent,
     AddCagnotteComponent,
     DetailsCagnottesComponent,
+
 
   ],
   imports: [

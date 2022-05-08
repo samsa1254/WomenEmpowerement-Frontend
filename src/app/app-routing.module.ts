@@ -10,9 +10,14 @@ import { OfferDetailsComponent } from './Pages/offer-list/offer-details/offer-de
 import { AddEventComponent } from './Pages/events/add-event/add-event.component';
 import { EventDatailsComponent } from './Pages/events/event-datails/event-datails.component';
 import { EventModifyComponent } from './Pages/events/event-modify/event-modify.component';
+
+import {CreatepostComponent} from "./Pages/acceuil/createpost/createpost.component";
+import {UpdatepostComponent} from "./Pages/acceuil/updatepost/updatepost.component";
+
 import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
 import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
 import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
+
 
 const routes: Routes = [
   {
@@ -32,9 +37,11 @@ const routes: Routes = [
       { path: 'Offer', component: OfferListComponent},
       { path: 'updateoffer/:id', component: UpdateOfferComponent},
       { path: 'detailsoffer/:id', component: OfferDetailsComponent},
-      
+
 
       { path: 'acceuil', component: AcceuilComponent },
+      { path :'createpost' , component: CreatepostComponent},
+      { path:'updatepost/:idPublication' , component: UpdatepostComponent}
       ],
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
