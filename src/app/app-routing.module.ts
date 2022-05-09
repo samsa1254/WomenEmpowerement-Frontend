@@ -3,13 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventsComponent } from './Pages/events/events.component';
 import { HomeComponent } from './Pages/home/home.component';
 import {AcceuilComponent} from "./Pages/acceuil/acceuil.component";
-<<<<<<< HEAD
 import {UserComponent} from "./Pages/user/user.component";
 import {AdduserComponent} from "./Pages/adduser/adduser.component";
 import {UpdateuserComponent} from "./Pages/updateuser/updateuser.component";
 import {LoginComponent} from "./Pages/login/login.component";
 import {ProfileComponent} from "./Pages/profile/profile.component";
-=======
 import { AddOfferComponent } from './Pages/offer-list/add-offer/add-offer.component';
 import { UpdateOfferComponent } from './Pages/offer-list/update-offer/update-offer.component';
 import { OfferListComponent } from './Pages/offer-list/offer-list.component';
@@ -25,22 +23,12 @@ import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
 import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
 import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
 
->>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-<<<<<<< HEAD
-    children: [{ path: 'events', component: EventsComponent } ,
-      {path: 'acceuil', component: AcceuilComponent } ,
-      {path:'profile',component:ProfileComponent},
-      {path: 'user', component: UserComponent , children:[{path:'adduser',component:AdduserComponent},{path:'updateuser/:iduser',component:UpdateuserComponent}] }],
 
-},
-  {path:"login", component:LoginComponent},
-  {path:"", redirectTo:"/login", pathMatch:"full"}
-=======
     children: [
       { path: 'events', component: EventsComponent },
       { path: 'addEvent', component: AddEventComponent},
@@ -59,12 +47,16 @@ const routes: Routes = [
 
       { path: 'acceuil', component: AcceuilComponent },
       { path :'createpost' , component: CreatepostComponent},
-      { path:'updatepost/:idPublication' , component: UpdatepostComponent}
-      ],
-  },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path:'updatepost/:idPublication' , component: UpdatepostComponent},
 
->>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1
+
+
+      {path:'profile',component:ProfileComponent},
+      {path: 'user', component: UserComponent , children:[{path:'adduser',component:AdduserComponent},{path:'updateuser/:iduser',component:UpdateuserComponent}] }],
+
+  },
+  {path:"login", component:LoginComponent},
+  {path:"", redirectTo:"/login", pathMatch:"full"}
 ];
 
 @NgModule({

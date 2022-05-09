@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 const AUTH_API = 'http://localhost:8089/SpringMVC/authenticate/';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({'Content-Type': 'application/json' })
 };
 
 @Injectable({
@@ -25,7 +25,6 @@ export class AuthService {
   register(user): Observable<any> {
     return this.http.post(AUTH_API, {
       username: user.username,
-      email: user.email,
       password: user.password
     }, httpOptions);
   }

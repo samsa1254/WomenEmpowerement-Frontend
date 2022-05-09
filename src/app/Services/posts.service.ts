@@ -2,23 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {Post} from "../models/post";
-<<<<<<< HEAD
-=======
 import {File} from "../models/File";
 import {HttpHeaders} from "@angular/common/http";
 
->>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1
 @Injectable({
   providedIn: 'root'
 })
 export class postsService {
-  usersUrl="http://localhost:8081/SpringMVC/servlet/getAllUserNamesJPQL";
-<<<<<<< HEAD
-  constructor(private _http:HttpClient) { }
-  getPosts() : Observable<Post[]>{
-    return this._http.get<Post[]>("http://localhost:8089/SpringMVC/Publication/retrieve-all-pubs");
-  }
-=======
+
   constructor(private httpClient:HttpClient) { }
   getPosts() : Observable<Post[]>{
     return this.httpClient.get<Post[]>("http://localhost:8089/SpringMVC/Publication/retrieve-all-pubs");
@@ -50,5 +41,4 @@ export class postsService {
     return this.httpClient.get("http://localhost:8089/SpringMVC/Publication/retrieve-pubbypost/"+post);
   }
 
->>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1
 }
