@@ -10,6 +10,13 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { EventsComponent } from './Pages/events/events.component';
 import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
 import {HttpClientModule} from "@angular/common/http";
+import { UserComponent } from './Pages/user/user.component';
+import { AdduserComponent } from './Pages/adduser/adduser.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { UpdateuserComponent } from './Pages/updateuser/updateuser.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { authInterceptorProviders } from './Helpers/AuthInterceptor';
+import { ProfileComponent } from './Pages/profile/profile.component';
 
 
 @NgModule({
@@ -21,13 +28,21 @@ import {HttpClientModule} from "@angular/common/http";
     FooterComponent,
     EventsComponent,
     AcceuilComponent,
+    UserComponent,
+    AdduserComponent,
+    UpdateuserComponent,
+    LoginComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
