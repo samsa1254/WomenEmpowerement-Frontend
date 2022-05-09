@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
+=======
 import { Event } from '../../models/event.model';
 import { EventService } from '../../Services/event.service';
 import { Router } from '@angular/router';
+>>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1
 
 @Component({
   selector: 'app-events',
@@ -10,6 +13,14 @@ import { Router } from '@angular/router';
 })
 export class EventsComponent implements OnInit {
 
+<<<<<<< HEAD
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+=======
   Events: Event[];
   constructor(private eventService: EventService, private router: Router) { }
 
@@ -40,3 +51,4 @@ export class EventsComponent implements OnInit {
   }
 }
 
+>>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1

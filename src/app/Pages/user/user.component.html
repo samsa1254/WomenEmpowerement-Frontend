@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <ul class="navbar-nav">
+
+    <li style="margin-right: 10% " class="nav-item ">
+      <a  routerLink="/home/user/" class="nav-link" class="btn btn-primary active" role="button" >Users List</a>
+    </li>
+    <li style="margin-right: 10% " class="nav-item">
+      <a  routerLink="/home/user/adduser" class="nav-link" class="btn btn-primary active" role="button" >Add user</a>
+    </li>
+
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+
+
+
+<br/>
+<h3 class="text-center"> ---- List Of Users ---- </h3>
+<br/>
+
+<div class="body table-responsive">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th> NAME</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let u of UserList">
+      <th scope="row">{{u.iduser}}</th>
+      <td>{{u.name}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.role}}</td>
+      <td><button (click) = "updateUser(u)" class = "btn btn-primary"> Update</button></td>
+      <td><button (click)="deleteStudent(u.iduser)" type="button"  class = "btn btn-dark">DELETE</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
