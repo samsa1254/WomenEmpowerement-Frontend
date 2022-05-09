@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<p>events works!</p>
-=======
 <div class = "row">
     <h2> Events List</h2>
     <button routerLink="/home/addEvent" class = "btn btn-primary" style="margin-left: 10px">Add Event</button>
@@ -25,17 +22,16 @@
       <td>{{event.description}}</td>
       <td>{{event.title}}</td>
       <td>
-  
+
         <button (click) = "updateEvent(event.id)" class = "btn btn-primary"> Update</button>
         <button (click) = "deleteEvent(event.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
         <button (click) = "EventDetails(event.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
-  
+
       </td>
-  
-  
+
+
     </tr>
     </tbody>
   </table>
-  
-  
->>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1
+
+

@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
-      this.roles = this.tokenStorage.getUser().roles;
+      this.roles = this.tokenStorage.getUser().role;
     }
   }
 
@@ -35,9 +35,10 @@ export class LoginComponent implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-        //this.reloadPage();
-        this.router.navigateByUrl('/home')
+        this.roles = this.tokenStorage.getUser().role;
+        console.log(this.roles)
+        this.reloadPage();
+       // this.router.navigateByUrl('/home')
       },
       err => {
         this.errorMessage = err.error.message;
