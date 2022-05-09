@@ -15,11 +15,17 @@
     "@angular/compiler": "~13.3.0",
     "@angular/core": "~13.3.0",
     "@angular/forms": "~13.3.0",
+<<<<<<< HEAD
     "@angular/http": "^7.2.16",
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "@auth0/angular-jwt": "^5.0.2",
+=======
+    "@angular/platform-browser": "~13.3.0",
+    "@angular/platform-browser-dynamic": "~13.3.0",
+    "@angular/router": "~13.3.0",
+>>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

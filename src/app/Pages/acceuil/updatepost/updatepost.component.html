@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="card col-md-6 offset-md-3 offset-md-3">
+    <div class="row">
+      <h3 class="text-center"> Update Post </h3>
+      <hr />
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label>Post</label>
+            <input type="text" class="form-control" id="post" [(ngModel)]="post.post"
+                   name="post">
+          </div>
+
+
+          <br />
+          <button class="btn btn-success" type="submit">Submit</button>
+          <button routerLink="/home/acceuil" class="btn btn-danger"></button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import {TokenStorageService} from "./Services/token-storage.service";
+=======
+>>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1
 
 @Component({
   selector: 'app-root',
@@ -7,6 +10,7 @@ import {TokenStorageService} from "./Services/token-storage.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+<<<<<<< HEAD
   private roles: string[];
   isLoggedIn = false;
   showAdminBoard = false;
@@ -33,4 +37,7 @@ export class AppComponent {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
+=======
+  title = 'Test';
+>>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1
 }

@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+      <div class="row">
+        <h3 class="text-center"> Update Event </h3>
+        <hr />
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()">
+  
+            <div class="form-group">
+                <label>dateDebut</label>
+                <input type="datetime-local" class="form-control" id="dateDebut" [(ngModel)]="offer.dateDebut"
+                       name="dateDebut">
+              </div>
+
+              <div class="form-group">
+                <label>dateFin</label>
+                <input type="datetime-local" class="form-control" id="dateFin" [(ngModel)]="offer.dateFin"
+                       name="dateFin">
+              </div>
+
+
+            <div class="form-group">
+              <label>description</label>
+              <input type="text" class="form-control" id="description" [(ngModel)]="offer.description"
+                     name="description">
+            </div>
+  
+            <div class="row clearfix">
+                <label for="type">Type</label>
+              </div>
+              <div class="form-group">
+                <div class="form-group">
+                  <div class="form-line">
+                    <select
+                      class="form-control"
+                      name="type"
+                      id="type"
+                      [(ngModel)]="offer.type">
+                      <option value="Charity">
+                        Charity
+                      </option>
+        
+                      <option value="Support_Group">Support_Group</option>
+                      <option value="Self_Help_Plan">
+                        Self_Help_Plan
+                      </option>
+        
+                      <option value="Supportive_Psychotherapy">
+                        Supportive_Psychotherapy
+                      </option>
+        
+                    </select>
+                  </div>
+                </div>
+              </div>
+  
+            <div class="form-group">
+              <label>title</label>
+              <input type="text" class="form-control" id="title" [(ngModel)]="offer.title"
+                     name="title">
+            </div>
+
+            <br />
+            <button class="btn btn-success" type="submit">Submit</button>
+            <button routerLink="/home/events"   style="margin-left: 400px" class="btn btn-warning" type="Cancel">Cancel</button>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

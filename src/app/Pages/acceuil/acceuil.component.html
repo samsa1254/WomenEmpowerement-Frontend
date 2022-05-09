@@ -1,9 +1,18 @@
 
+<<<<<<< HEAD
+=======
+<button routerLink="/home/createpost"  style="margin-left: 10px" > Que voulez vous dire ?</button>
+>>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1
 <ul *ngFor="let u of PostList">
 
   <li> {{u.date}}</li>
   <li> {{u.post}}</li>
   <li> {{u.state}}</li>
   <li> {{u.time}}</li>
+<<<<<<< HEAD
+=======
+  <button routerLink="/home/updatepost/{{u.idPublication}}" class = "btn btn-primary"> Update</button>
+  <button (click) = "deletePost(u.idPublication)" class = "btn btn-close" style="margin-left: 10px"> </button>
+>>>>>>> 99a929978bfe485d30c478ad80362f0ff908f0a1
 </ul>
 
