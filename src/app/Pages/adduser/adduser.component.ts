@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { userService } from '../../Services/user.service';
+import { userService } from '../../Services/AuthANDUser/user.service';
 import {User} from "../../models/user";
 import {FormControl,FormGroup,Validators} from '@angular/forms';
 import {Router} from "@angular/router";
+import {async} from "rxjs";
 
 @Component({
   selector: 'app-adduser',
@@ -20,13 +21,17 @@ export class AdduserComponent implements OnInit {
     console.log("test"+this.user.role)
     this.oService.createUser(this.user).subscribe( data =>{
         console.log(data);
+        //window.location.reload();
         this.goToUserList();
       },
       error => console.log(error));
   }
 
-  goToUserList(){
-    this.router.navigate(['/home/user']) ;
+  goToUserList (){
+    this.router.navigate(['/home/user'])
+      .then(() => {
+      window.location.reload();
+    });
   }
 
   onSubmit(){

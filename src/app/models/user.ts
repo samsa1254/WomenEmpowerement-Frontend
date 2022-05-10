@@ -4,7 +4,7 @@ export class User {
   public adminsector: string;
   public cin: number ;
   public datedenaissaince: Date;
-  private _email: string;
+  public email: string;
   public expertadress: string;
   public expertnumber: string;
   public expertspeciality: string;
@@ -19,11 +19,10 @@ export class User {
   public subscribtion: Date;
   public tutorspeciality: string;
   public tutortype: string;
+  token?: string;
 
 
-  set email(value: string) {
-    this._email = value;
-  }
+
 }
 
 

@@ -22,6 +22,7 @@ import {UpdatepostComponent} from "./Pages/acceuil/updatepost/updatepost.compone
 import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
 import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
 import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
+import {LogoutComponent} from "./Pages/logout/logout.component";
 
 
 const routes: Routes = [
@@ -50,11 +51,12 @@ const routes: Routes = [
       { path:'updatepost/:idPublication' , component: UpdatepostComponent},
 
 
-
+      {path:'logout',component:LogoutComponent},
       {path:'profile',component:ProfileComponent},
       {path: 'user', component: UserComponent , children:[{path:'adduser',component:AdduserComponent},{path:'updateuser/:iduser',component:UpdateuserComponent}] }],
 
-  },
+
+},
   {path:"login", component:LoginComponent},
   {path:"", redirectTo:"/login", pathMatch:"full"}
 ];

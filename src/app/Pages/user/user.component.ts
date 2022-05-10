@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {userService} from "../../Services/user.service";
+import {userService} from "../../Services/AuthANDUser/user.service";
 import {User} from "../../models/user";
 import { Router } from '@angular/router';
 @Component({
@@ -12,10 +12,19 @@ export class UserComponent implements OnInit {
   UserList : User[]=[];
   user : User ;
   studentlist:any;
-
+  board: string;
+  errorMessage: string;
   constructor(private userservice:userService , private router: Router ) { }
 
   ngOnInit(): void {
+    this.userservice.getUserBoard().subscribe(
+      data => {
+        this.board = data;
+      },
+      error => {
+        this.errorMessage = `${error.status}: ${JSON.parse(error.error).message}`;
+      }
+    );
 
     this.userservice.getUsers().subscribe(
       (data: User[]) => { this.UserList = data ; console.log('aaaa',data) }
