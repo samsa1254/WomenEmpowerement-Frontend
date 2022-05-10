@@ -9,13 +9,13 @@ import { LeftbarComponent } from './Components/leftbar/leftbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { EventsComponent } from './Pages/events/events.component';
 import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { UserComponent } from './Pages/user/user.component';
 import { AdduserComponent } from './Pages/adduser/adduser.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UpdateuserComponent } from './Pages/updateuser/updateuser.component';
 import { LoginComponent } from './Pages/login/login.component';
-import { authInterceptorProviders } from './Helpers/AuthInterceptor';
+import { authInterceptor } from './Helpers/AuthInterceptor';
 import { ProfileComponent } from './Pages/profile/profile.component';
 import { AddEventComponent } from './Pages/events/add-event/add-event.component';
 import { EventDatailsComponent } from './Pages/events/event-datails/event-datails.component';
@@ -31,6 +31,8 @@ import { UpdatepostComponent } from './Pages/acceuil/updatepost/updatepost.compo
 import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
 import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
 import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
+import { RegisterComponent } from './Pages/register/register.component';
+import { LogoutComponent } from './Pages/logout/logout.component';
 
 
 @NgModule({
@@ -63,6 +65,8 @@ import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/d
     UpdateuserComponent,
     LoginComponent,
     ProfileComponent,
+    RegisterComponent,
+    LogoutComponent,
   ],
 
   imports: [
@@ -73,8 +77,11 @@ import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/d
     FormsModule
 
   ],
-  providers: [authInterceptorProviders],
-
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS, useClass:authInterceptor, multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

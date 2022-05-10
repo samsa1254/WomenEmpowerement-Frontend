@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Http, RequestOptions , Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {User} from "../models/user";
+import {User} from "../../models/user";
 import {Router} from "@angular/router";
 import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -13,10 +13,14 @@ export class userService {
   baseUrl="http://localhost:8089/SpringMVC/user/remove-User";
   baseUrl2="http://localhost:8089/SpringMVC/user/retrieve-User";
   baseUrl3="http://localhost:8089/SpringMVC/authenticate";
+  baseUrl4="http://localhost:8089/SpringMVC/user/retrieve-me";
+
+  private userUrl = 'http://localhost:8089/SpringMVC/user/retrieve-me';
 
   constructor(private _http:HttpClient, private router : Router) { }
   getUsers() : Observable<User[]>{
     return this._http.get<User[]>("http://localhost:8089/SpringMVC/user/retrieve-all-User");
+
   }
 
   deleteUserById(id:number){
@@ -54,6 +58,12 @@ export class userService {
 
   }
 
+  findme():Observable<any>{
+    console.log(this._http.get<User>(this.baseUrl4));
+    return this._http.get<User>(this.baseUrl4);
+
+  }
+
   logout()
   {
     // Remove the token from the localStorage.
@@ -66,54 +76,16 @@ export class userService {
   /*
   * Check whether User is loggedIn or not.
   */
-
-  isLoggedIn() {
-
-    // create an instance of JwtHelper class.
-    let jwtHelper = new JwtHelperService();
-
-    // get the token from the localStorage as we have to work on this token.
-    let token = localStorage.getItem('token');
-
-    // check whether if token have something or it is null.
-    if(!token)
-    {
-      return false;
-    }
-
-    // get the Expiration date of the token by calling getTokenExpirationDate(String) method of JwtHelper class. this method accepts a string value which is nothing but a token.
-
-    if(token)
-    {
-      let expirationDate = jwtHelper.getTokenExpirationDate(token);
-
-      // check whether the token is expired or not by calling isTokenExpired() method of JwtHelper class.
-
-      let isExpired = jwtHelper.isTokenExpired(token);
-
-      return !isExpired;
-    }
-    return true ;
+  getUserBoard(): Observable<any> {
+    return this._http.get(this.userUrl, { responseType: 'text' });
   }
 
-  getAdminDetail(adminId) : Observable<any>
-  {
-    let url = this.baseUrl + "getAdminData/" + adminId;
-
-    // create an instance of Header object.
-    let headers = new Headers();
-
-    // get token from localStorage.
-    let token = localStorage.getItem('token');
-
-    // Append Authorization header.
-    headers.append('Authorization' , 'Bearer ' + token);
-
-    // create object of RequestOptions and include that in it.
-    let options = new RequestOptions( { headers : headers } );
-
-   // return this._http.get(url , options);
-
-    return this._http.get(url );
+  getPMBoard(): Observable<any> {
+    return this._http.get(this.userUrl, { responseType: 'text' });
   }
+
+  getAdminBoard(): Observable<any> {
+    return this._http.get(this.userUrl, { responseType: 'text' });
+  }
+
 }
