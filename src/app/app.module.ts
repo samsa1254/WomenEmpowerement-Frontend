@@ -11,7 +11,7 @@ import { EventsComponent } from './Pages/events/events.component';
 import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ReactiveFormsModule } from '@angular/forms';
-import { AddEventComponent } from './Pages/events/add-event/add-event.component'; 
+import { AddEventComponent } from './Pages/events/add-event/add-event.component';
 import { EventDatailsComponent } from './Pages/events/event-datails/event-datails.component';
 import { EventModifyComponent } from './Pages/events/event-modify/event-modify.component';
 import { AddOfferComponent } from './Pages/offer-list/add-offer/add-offer.component';
@@ -21,7 +21,7 @@ import { OfferDetailsComponent } from './Pages/offer-list/offer-details/offer-de
 
 import { CreatepostComponent } from './Pages/acceuil/createpost/createpost.component';
 import { UpdatepostComponent } from './Pages/acceuil/updatepost/updatepost.component';
-
+import { NgxPaginationModule} from "ngx-pagination";
 import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
 import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
 import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
@@ -57,7 +57,9 @@ import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/d
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

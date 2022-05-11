@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,EventEmitter,Input,Output, OnInit } from '@angular/core';
 
 import {Router} from "@angular/router";
 import {Post} from "../../../models/post";
 import {postsService} from "../../../Services/posts.service";
 import {File} from "../../../models/File";
+
 
 @Component({
   selector: 'app-createpost',
@@ -22,7 +23,7 @@ export class CreatepostComponent implements OnInit {
   savePost(){
     this.pService.createPost(this.post).subscribe( data =>{
         this.pService.findpostbypost(this.post.post).subscribe((data1 :Post)=>{
-          console.log(data1);
+          console.log('aaaa',data1.idPublication );
 
           this.pService.affect(this.file,data1.idPublication).subscribe(); })
 

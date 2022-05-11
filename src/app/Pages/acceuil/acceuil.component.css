@@ -1,0 +1,35 @@
+
+.dropout {
+  z-index: 9001;
+  width: fit-content;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dropout ul {
+  position: absolute;
+  top: -1.1rem;
+  right: 1.5rem;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.12s ease;
+}
+.more {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.more span {
+  display: block;
+  width: .25rem;
+  height: .25rem;
+  background: #363636;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.more span:not(:last-child) {
+  margin-bottom: .125rem;
+}

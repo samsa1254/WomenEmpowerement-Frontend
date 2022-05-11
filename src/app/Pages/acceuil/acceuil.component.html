@@ -1,12 +1,35 @@
 
-<button routerLink="/home/createpost"  style="margin-left: 10px" > Que voulez vous dire ?</button>
-<ul *ngFor="let u of PostList">
+<button  routerLink="/home/createpost"  style="margin-left: 30% ; border-radius: 12px ; background-color:white; box-shadow: 3px 3px 3px gray  ; padding: 10px ; text-align: center ; width: 350px ; margin-bottom: 15px ; font-family: boxicons ; font-size: 22px " > Que voulez vous dire ?</button>
+<Div style="border: solid black 2px ; margin-bottom: 10px" *ngFor="let u of PostList | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                };
+          let i = index">
+ <div style="display: flex ; justify-content: space-between "><h3> dhia mathlouthi </h3>
+ <div>
+   <button *ngIf="update" routerLink="/home/updatepost/{{u.idPublication}}" class = "btn btn-primary"> Update</button>
 
-  <li> {{u.date}}</li>
-  <li> {{u.post}}</li>
-  <li> {{u.state}}</li>
-  <li> {{u.time}}</li>
-  <button routerLink="/home/updatepost/{{u.idPublication}}" class = "btn btn-primary"> Update</button>
-  <button (click) = "deletePost(u.idPublication)" class = "btn btn-close" style="margin-left: 10px"> </button>
-</ul>
+   <button style="border: none ; font-size: 25px " (click)="explore()"> ... </button>
 
+   <button (click) = "deletePost(u.idPublication)" class = "btn btn-close" style="margin-left: 10px"> </button>
+ </div>
+ </div>
+  <p> {{u.date}}-{{u.time}}</p>
+  <p> {{u.post}}</p>
+  <img style="width: 250px ;height: 250px" class="fit-picture" src="assets/images/products/img-1.png">
+
+
+
+</Div>
+
+
+<div class="d-flex justify-content-center">
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableDataChange($event)"
+  >
+  </pagination-controls>
+</div>
