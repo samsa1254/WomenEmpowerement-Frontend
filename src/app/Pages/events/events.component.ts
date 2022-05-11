@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Event } from '../../models/event.model';
 import { EventService } from '../../Services/event.service';
 import { Router } from '@angular/router';
@@ -36,7 +37,7 @@ export class EventsComponent implements OnInit {
     this.router.navigate(['home/detailsEvent', id]);
   }
 
-  
+
   updateEvent(id: number){
     this.router.navigate(['home/updateEvent', id]);
   }

@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventsComponent } from './Pages/events/events.component';
 import { HomeComponent } from './Pages/home/home.component';
 import {AcceuilComponent} from "./Pages/acceuil/acceuil.component";
+import {UserComponent} from "./Pages/user/user.component";
+import {AdduserComponent} from "./Pages/adduser/adduser.component";
+import {UpdateuserComponent} from "./Pages/updateuser/updateuser.component";
+import {LoginComponent} from "./Pages/login/login.component";
+import {ProfileComponent} from "./Pages/profile/profile.component";
 import { AddOfferComponent } from './Pages/offer-list/add-offer/add-offer.component';
 import { UpdateOfferComponent } from './Pages/offer-list/update-offer/update-offer.component';
 import { OfferListComponent } from './Pages/offer-list/offer-list.component';
@@ -10,6 +15,10 @@ import { OfferDetailsComponent } from './Pages/offer-list/offer-details/offer-de
 import { AddEventComponent } from './Pages/events/add-event/add-event.component';
 import { EventDatailsComponent } from './Pages/events/event-datails/event-datails.component';
 import { EventModifyComponent } from './Pages/events/event-modify/event-modify.component';
+
+import {CreatepostComponent} from "./Pages/acceuil/createpost/createpost.component";
+import {UpdatepostComponent} from "./Pages/acceuil/updatepost/updatepost.component";
+
 import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
 import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
 import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
@@ -19,10 +28,15 @@ import { AffectationComponent } from './Pages/events/affectation/affectation.com
 import { CreateCardComponent } from './Pages/paiement/create-card/create-card.component';
 import { importType } from '@angular/compiler/src/output/output_ast';
 import { SendMailComponent } from './Pages/events/send-mail/send-mail.component';
+
+import {LogoutComponent} from "./Pages/logout/logout.component";
+
+
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+
     children: [
       { path: 'events', component: EventsComponent },
       { path: 'addEvent', component: AddEventComponent},
@@ -45,13 +59,21 @@ const routes: Routes = [
       { path: 'Offer', component: OfferListComponent},
       { path: 'updateoffer/:id', component: UpdateOfferComponent},
       { path: 'detailsoffer/:id', component: OfferDetailsComponent},
-      
+
 
       { path: 'acceuil', component: AcceuilComponent },
-      ],
-  },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path :'createpost' , component: CreatepostComponent},
+      { path:'updatepost/:idPublication' , component: UpdatepostComponent},
 
+
+      {path:'logout',component:LogoutComponent},
+      {path:'profile',component:ProfileComponent},
+      {path: 'user', component: UserComponent , children:[{path:'adduser',component:AdduserComponent},{path:'updateuser/:iduser',component:UpdateuserComponent}] }],
+
+
+},
+  {path:"login", component:LoginComponent},
+  {path:"", redirectTo:"/login", pathMatch:"full"}
 ];
 
 @NgModule({
