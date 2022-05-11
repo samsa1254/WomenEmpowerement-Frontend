@@ -21,8 +21,8 @@ export class AcceuilComponent implements OnInit {
 
   ngOnInit(): void {
 
-this.getPosts();
-    }
+    this.getPosts();
+  }
 
 
 
@@ -33,9 +33,9 @@ this.getPosts();
     let list2 : Post[];
     this.postservice.getPosts().subscribe(data => {
 
-      this.PostList = data.reverse();
-      console.log(this.PostList);
-    }
+        this.PostList = data.reverse();
+        console.log(this.PostList);
+      }
     );
   }
   updatepost(idPublication: number){
@@ -62,3 +62,6 @@ this.getPosts();
     this.update=!this.update;
   }
 }
+
+
+

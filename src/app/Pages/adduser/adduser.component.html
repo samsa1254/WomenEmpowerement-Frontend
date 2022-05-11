@@ -1,0 +1,131 @@
+<div class="row">
+  <br/>
+  <h3 class="text-center"> ---- Create User ---- </h3>
+  <br/>
+  <div class="card col-md-6 offset-md-3 offset-md-3">
+    <div class="row">
+
+      <hr />
+      <div class="card-body">
+        <form #f (ngSubmit)="onSubmit()">
+
+
+          <div class="form-group">
+            <label> Name</label>
+            <input type="text" name="name" class="form-control" id="name" [(ngModel)]="user.name"  >
+          </div>
+
+          <div class="form-group">
+            <label>lastname</label>
+            <input  name="lastname" type="text" class="form-control" id="lastname" [(ngModel)]="user.lastname"  >
+          </div>
+
+          <div class="form-group">
+            <label>datedenaissaince</label>
+            <input name="datedenaissaince" type="date" class="form-control" id="datedenaissaince" [(ngModel)]="user.datedenaissaince" >
+          </div>
+
+          <div class="form-group">
+            <label>cin</label>
+            <input  name="cin" type="number" class="form-control" id="cin" [(ngModel)]="user.cin" >
+          </div>
+
+
+          <div class="form-group">
+            <label>sexe</label>
+            <select class="form-control" name="sexe" id="sexe" [(ngModel)]="user.sexe">
+              <option value="Men">Men</option>
+              <option value="Women">Women</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>email</label>
+            <input name="email"  type="email" class="form-control" id="email" [(ngModel)]="user.email" >
+          </div>
+
+          <div class="form-group">
+            <label>login</label>
+            <input  name="login"  type="text" class="form-control" id="login" [(ngModel)]="user.login"  >
+          </div>
+
+
+          <div class="form-group">
+            <label>password</label>
+            <input  name="password"  type="password" class="form-control" id="password" [(ngModel)]="user.password"  >
+          </div>
+
+
+          <div class="form-group">
+            <label>role</label>
+            <select class="form-control" name="role" id="role" [(ngModel)]="user.role">
+              <option value="Admin">Admin</option>
+              <option value="women">women</option>
+              <option value="expert">expert</option>
+              <option value="tutor">tutor</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label >isEnabled</label>
+            <select name="isEnabled" type="checkbox" class="form-control" id="isEnabled" [(ngModel)]="user.isEnabled" >
+              <option value=true>true</option>
+              <option value=false>false</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>subscribtion</label>
+            <input name="subscribtion" type="date" class="form-control" id="subscribtion" [(ngModel)]="user.subscribtion" >
+          </div>
+
+          <div class="form-group">
+            <label>adminsector</label>
+            <input  name="adminsector"  type="text" class="form-control" id="adminsector" [(ngModel)]="user.adminsector"  >
+          </div>
+
+          <div class="form-group">
+            <label>tutorspeciality</label>
+            <input  name="tutorspeciality"  type="text" class="form-control" id="tutorspeciality" [(ngModel)]="user.tutorspeciality"  >
+          </div>
+
+          <div class="form-group">
+            <label>tutortype</label>
+            <select [(ngModel)]="user.tutortype"  id="tutortype" class="form-control"  data-toggle="tooltip" data-placement="right" title="tutortype">
+              <option value="Internal">Internal</option>
+              <option value="External">External</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label>expertspeciality</label>
+            <select [(ngModel)]="user.expertspeciality"  id="expertspeciality" class="form-control" data-toggle="tooltip" data-placement="right" title="expertspeciality">
+              <option value="psychiatrist">	psychiatrist</option>
+              <option value="lawyer">lawyer</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label>expertadress</label>
+            <input  name="expertadress"  type="text" class="form-control" id="expertadress" [(ngModel)]="user.expertadress"  >
+          </div>
+
+
+          <div class="form-group">
+            <label>expertnumber</label>
+            <input  name="expertnumber"  type="text" class="form-control" id="expertnumber" [(ngModel)]="user.expertnumber"  >
+          </div>
+
+
+
+          <br />
+          <button class="btn btn-success" type="submit">Add</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

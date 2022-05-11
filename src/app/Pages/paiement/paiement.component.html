@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+      <div class="row">
+        <h3 class="text-center"> Create Offer </h3>
+        <hr />
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()">
+  
+            <div class="form-group">
+                <label>idc</label>
+                <input type="number" class="form-control" id="idc" [(ngModel)]="idc"
+                       name="idc">
+              </div>
+
+              <div class="form-group">
+                <label>carta</label>
+                <input type="text" class="form-control" id="carta" [(ngModel)]="carta"
+                       name="carta">
+              </div>
+
+              <div class="form-group">
+                <label>expMonth</label>
+                <input type="number" class="form-control" id="expMonth" [(ngModel)]="expMonth"
+                       name="expMonth">
+              </div>
+
+              <div class="form-group">
+                <label>expYear</label>
+                <input type="number" class="form-control" id="idUser" [(ngModel)]="expYear"
+                       name="expYear">
+              </div>
+
+              <div class="form-group">
+                <label>cvc</label>
+                <input type="number" class="form-control" id="cvc" [(ngModel)]="cvc"
+                       name="cvc">
+              </div>
+
+              <div class="form-group">
+                <label>Amount</label>
+                <input type="number" class="form-control" id="userAmount" [(ngModel)]="userAmount"
+                       name="userAmount">
+              </div>
+
+              <div class="container-fluid py-3">
+                <form #form="ngForm">
+                  <div class="row mt-3">
+                    <div class="col-sm-12 mb-2">
+                      <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+                      <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+                        <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                </div>
+                
+  
+             
+            <button class="btn btn-success" type="submit"  (click)="send(form)" >Submit</button>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -9,7 +9,7 @@ import {HttpHeaders} from "@angular/common/http";
   providedIn: 'root'
 })
 export class postsService {
-  usersUrl="http://localhost:8081/SpringMVC/servlet/getAllUserNamesJPQL";
+
   constructor(private httpClient:HttpClient) { }
   getPosts() : Observable<Post[]>{
     return this.httpClient.get<Post[]>("http://localhost:8089/SpringMVC/Publication/retrieve-all-pubs");
