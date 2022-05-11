@@ -33,7 +33,9 @@ export class UpdatepostComponent implements OnInit {
   }
 
   goToPostList(){
-    this.router.navigate(['/home/acceuil']);
+    this.router.navigate(['/home/acceuil']).then(() => {
+      window.location.reload();
+    });
   }
   onSubmit(){
     console.log(this.post);

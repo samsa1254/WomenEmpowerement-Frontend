@@ -7,19 +7,19 @@
                   totalItems: count
                 };
           let i = index">
- <div style="display: flex ; justify-content: space-between "><h3> dhia mathlouthi </h3>
- <div>
-   <button *ngIf="update" routerLink="/home/updatepost/{{u.idPublication}}" class = "btn btn-primary"> Update</button>
+  <div style="display: flex ; justify-content: space-between "><h3> A New Post </h3>
+    <div>
+      <button *ngIf="update" routerLink="/home/updatepost/{{u.idPublication}}" class = "btn btn-primary"> Update</button>
 
 
-   <button style="border: none ; font-size: 25px " (click)="explore()"> ... </button>
-
- 
+      <button style="border: none ; font-size: 25px " (click)="explore()"> ... </button>
 
 
-   <button (click) = "deletePost(u.idPublication)" class = "btn btn-close" style="margin-left: 10px"> </button>
- </div>
- </div>
+
+
+      <button (click) = "deletePost(u.idPublication)" class = "btn btn-close" style="margin-left: 10px"> </button>
+    </div>
+  </div>
   <p> {{u.date}}-{{u.time}}</p>
   <p> {{u.post}}</p>
   <img style="width: 250px ;height: 250px" class="fit-picture" src="assets/images/products/img-1.png">

@@ -9,10 +9,6 @@ import { LeftbarComponent } from './Components/leftbar/leftbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { EventsComponent } from './Pages/events/events.component';
 import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
-
-import {HttpClientModule} from "@angular/common/http";
-import { ReactiveFormsModule } from '@angular/forms';
-
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { UserComponent } from './Pages/user/user.component';
 import { AdduserComponent } from './Pages/adduser/adduser.component';
@@ -21,7 +17,6 @@ import { UpdateuserComponent } from './Pages/updateuser/updateuser.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { authInterceptor } from './Helpers/AuthInterceptor';
 import { ProfileComponent } from './Pages/profile/profile.component';
-
 import { AddEventComponent } from './Pages/events/add-event/add-event.component';
 import { EventDatailsComponent } from './Pages/events/event-datails/event-datails.component';
 import { EventModifyComponent } from './Pages/events/event-modify/event-modify.component';
@@ -32,7 +27,7 @@ import { OfferDetailsComponent } from './Pages/offer-list/offer-details/offer-de
 
 import { CreatepostComponent } from './Pages/acceuil/createpost/createpost.component';
 import { UpdatepostComponent } from './Pages/acceuil/updatepost/updatepost.component';
-import { NgxPaginationModule} from "ngx-pagination";
+
 import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
 import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
 import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
@@ -48,6 +43,7 @@ import { SendMailComponent } from './Pages/events/send-mail/send-mail.component'
 
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
 import { environment } from '../environments/environment';
+import {NgxPaginationModule} from "ngx-pagination";
 
 
 @NgModule({
@@ -65,9 +61,10 @@ import { environment } from '../environments/environment';
     OfferListComponent,
     OfferDetailsComponent,
     EventsComponent,
+
+
+
     AcceuilComponent,
-
-
     CreatepostComponent,
     UpdatepostComponent,
 
@@ -90,19 +87,17 @@ import { environment } from '../environments/environment';
 
   ],
 
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        RecaptchaModule,
+        RecaptchaFormsModule,
+        NgxPaginationModule
 
-    NgxPaginationModule
-
-    RecaptchaModule,
-    RecaptchaFormsModule
-
-  ],
+    ],
   providers: [
     {
       provide:HTTP_INTERCEPTORS, useClass:authInterceptor, multi:true
@@ -115,7 +110,6 @@ import { environment } from '../environments/environment';
         siteKey: environment.recaptcha.siteKey,
       } as RecaptchaSettings,
     },
-
 
   ],
   bootstrap: [AppComponent]

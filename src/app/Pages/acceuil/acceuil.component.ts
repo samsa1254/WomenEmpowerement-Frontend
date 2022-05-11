@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Post} from "../../models/post";
 import {postsService} from "../../Services/posts.service";
 import {Router} from "@angular/router";
+import {TokenStorageService} from "../../Services/AuthANDUser/token-storage.service";
+import {User} from "../../models/user";
+import {userService} from "../../Services/AuthANDUser/user.service";
 
 @Component({
   selector: 'app-acceuil',
@@ -17,10 +20,16 @@ export class AcceuilComponent implements OnInit {
   PostList : Post[]=[];
   update : boolean = false ;
   post : Post ;
-  constructor(private postservice:postsService,private router: Router ) { }
+  user : User ;
+
+  constructor(private userservice:userService ,private postservice:postsService,private router: Router ,private token: TokenStorageService) { }
 
   ngOnInit(): void {
-
+    sessionStorage.getItem("token");
+    //console.log(sessionStorage.getItem("token"))
+    this.userservice.findme().subscribe(
+      (data: User) => { this.user = data ; console.log('aaaa',data) }
+    );
     this.getPosts();
   }
 
@@ -30,6 +39,8 @@ export class AcceuilComponent implements OnInit {
 
 
   private getPosts(){
+
+
     let list2 : Post[];
     this.postservice.getPosts().subscribe(data => {
 
@@ -62,6 +73,5 @@ export class AcceuilComponent implements OnInit {
     this.update=!this.update;
   }
 }
-
 
 

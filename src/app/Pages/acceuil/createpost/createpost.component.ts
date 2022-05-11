@@ -21,6 +21,7 @@ export class CreatepostComponent implements OnInit {
   }
 
   savePost(){
+
     this.pService.createPost(this.post).subscribe( data =>{
         this.pService.findpostbypost(this.post.post).subscribe((data1 :Post)=>{
           console.log('aaaa',data1.idPublication );
@@ -33,7 +34,9 @@ export class CreatepostComponent implements OnInit {
   }
 
   goToPostList(){
-    this.router.navigate(['/home/acceuil']);
+    this.router.navigate(['/home/acceuil']).then(() => {
+      window.location.reload();
+    });
   }
 
   upload(event) {
@@ -45,6 +48,7 @@ export class CreatepostComponent implements OnInit {
   onSubmit(){
     console.log(this.post);
     this.savePost();
+    this.goToPostList();
   }
 
 }
