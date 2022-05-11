@@ -45,6 +45,6 @@ CreatCustomer (){
  }
 
  Pay (){
-  this.router.navigate(['home/paiement']);
+  this.router.navigate(['home/Paiement']);
  }
   }

@@ -31,13 +31,18 @@ import { UpdatepostComponent } from './Pages/acceuil/updatepost/updatepost.compo
 import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
 import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
 import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
+
+import { RegisterComponent } from './Pages/register/register.component';
+import { LogoutComponent } from './Pages/logout/logout.component';
 import { PaiementComponent } from './Pages/paiement/paiement.component';
 import { StripeComponent } from './Pages/paiement/stripe/stripe.component';
 import { AffectationComponent } from './Pages/events/affectation/affectation.component';
 import { CreateCardComponent } from './Pages/paiement/create-card/create-card.component';
 import { SendMailComponent } from './Pages/events/send-mail/send-mail.component';
-import { RegisterComponent } from './Pages/register/register.component';
-import { LogoutComponent } from './Pages/logout/logout.component';
+
+
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -77,6 +82,7 @@ import { LogoutComponent } from './Pages/logout/logout.component';
     ProfileComponent,
     RegisterComponent,
     LogoutComponent,
+
   ],
 
   imports: [
@@ -84,13 +90,24 @@ import { LogoutComponent } from './Pages/logout/logout.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
 
   ],
   providers: [
     {
       provide:HTTP_INTERCEPTORS, useClass:authInterceptor, multi:true
-    }
+
+
+    },
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: environment.recaptcha.siteKey,
+      } as RecaptchaSettings,
+    },
+
   ],
   bootstrap: [AppComponent]
 })
