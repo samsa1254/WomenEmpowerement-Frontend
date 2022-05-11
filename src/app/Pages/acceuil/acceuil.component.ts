@@ -9,8 +9,13 @@ import {Router} from "@angular/router";
   styleUrls: ['./acceuil.component.css']
 })
 export class AcceuilComponent implements OnInit {
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 7;
+  tableSizes: any = [3, 6, 9, 12];
 
   PostList : Post[]=[];
+  update : boolean = false ;
   post : Post ;
   constructor(private postservice:postsService,private router: Router ) { }
 
@@ -42,6 +47,19 @@ export class AcceuilComponent implements OnInit {
       console.log(data);
       this.getPosts();
     })
+  }
+
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.getPosts();
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getPosts();
+  }
+  explore(){
+    this.update=!this.update;
   }
 }
 

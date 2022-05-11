@@ -26,13 +26,13 @@ export class postsService {
   deletePost(idPublication: number): Observable<Object>{
     return this.httpClient.delete("http://localhost:8089/SpringMVC/Publication/remove-pub/"+idPublication);
   }
-  upload(file:File[])  : Observable<Object>{
+  upload(file:File[]) : Observable<Object>{
    return this.httpClient.post("http://localhost:8089/SpringMVC/File",file);
   }
 
-  affect ( file:File[],idPublication:number):Observable<Object>{
+  affect(file:File[],idPublication:number):Observable<Object>{
     const headers= new HttpHeaders()
-      .set('content-type', 'undefined');
+      .set('Content-Type', 'Undefined');
     return this.httpClient.post("http://localhost:8089/SpringMVC/File/"+idPublication,file,{ 'headers': headers });
 
   }
