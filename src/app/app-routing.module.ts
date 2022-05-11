@@ -13,7 +13,12 @@ import { EventModifyComponent } from './Pages/events/event-modify/event-modify.c
 import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
 import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
 import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
-
+import { StripeComponent } from './Pages/paiement/stripe/stripe.component';
+import { PaiementComponent } from './Pages/paiement/paiement.component';
+import { AffectationComponent } from './Pages/events/affectation/affectation.component';
+import { CreateCardComponent } from './Pages/paiement/create-card/create-card.component';
+import { importType } from '@angular/compiler/src/output/output_ast';
+import { SendMailComponent } from './Pages/events/send-mail/send-mail.component';
 const routes: Routes = [
   {
     path: 'home',
@@ -23,10 +28,18 @@ const routes: Routes = [
       { path: 'addEvent', component: AddEventComponent},
       { path: 'detailsEvent/:id', component: EventDatailsComponent},
       { path: 'updateEvent/:id', component: EventModifyComponent},
+      { path: 'Affectation/:id', component:AffectationComponent },
+      { path: 'SendMail/:id', component:SendMailComponent },
 
       { path: 'cagnottes', component: CagnottesComponent },
       { path: 'addcagnotte', component: AddCagnotteComponent},
       { path: 'detailscagnotte/:id', component: DetailsCagnottesComponent},
+
+      { path: 'CreateCustomer', component: StripeComponent },
+      { path: 'CreateCard', component: CreateCardComponent},
+      { path: 'Paiement', component: PaiementComponent},
+
+
 
       { path: 'addoffer', component: AddOfferComponent},
       { path: 'Offer', component: OfferListComponent},
