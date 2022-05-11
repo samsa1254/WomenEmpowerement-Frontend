@@ -12,14 +12,14 @@ import { EventService } from '../../../Services/event.service';
   styleUrls: ['./add-event.component.css']
 })
 export class AddEventComponent implements OnInit {
-  offer: Event = new Event();
+  ev: Event = new Event();
   constructor(private evService: EventService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   saveEvent(){
-    this.evService.createEvent(this.offer).subscribe( data =>{
+    this.evService.createEvent(this.ev).subscribe( data =>{
       console.log(data);
       this.goToEventsList();
     },
@@ -31,7 +31,7 @@ export class AddEventComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.offer);
+    console.log(this.ev);
     this.saveEvent();
   }
 }
