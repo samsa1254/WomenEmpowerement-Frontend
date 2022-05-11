@@ -30,6 +30,7 @@ import { importType } from '@angular/compiler/src/output/output_ast';
 import { SendMailComponent } from './Pages/events/send-mail/send-mail.component';
 
 import {LogoutComponent} from "./Pages/logout/logout.component";
+import {RegisterComponent} from "./Pages/register/register.component";
 
 
 const routes: Routes = [
@@ -72,6 +73,7 @@ const routes: Routes = [
 
 
 },
+  {path:"register", component:RegisterComponent},
   {path:"login", component:LoginComponent},
   {path:"", redirectTo:"/login", pathMatch:"full"}
 ];
