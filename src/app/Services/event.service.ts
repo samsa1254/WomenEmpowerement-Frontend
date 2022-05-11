@@ -46,7 +46,7 @@ export class EventService {
 
   Affectation(id, user): Observable<any> {
     return this.httpClient.post(
-      `http://localhost:8089/SpringMVC/Event/addParticipant/${id}/`+user ,this.httpOptions);
+      `http://localhost:8089/SpringMVC/Event/addParticipant/${id}/`,user ,this.httpOptions);
   }
 
   SendMail(idEvent : number) {

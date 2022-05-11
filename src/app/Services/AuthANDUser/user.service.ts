@@ -42,6 +42,10 @@ export class userService {
     return this._http.get<User>(`${this.baseUrl2}/${id}`);
   }
 
+  getUserById2(id: number){
+    return this._http.get(`${this.baseUrl2}/${id}`);
+  }
+
   updateUser(user: User): Observable<Object>{
     return this._http.put(`http://localhost:8089/SpringMVC/user/modify-User`, user);
   }

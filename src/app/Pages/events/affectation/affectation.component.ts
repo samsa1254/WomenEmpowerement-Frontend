@@ -4,6 +4,8 @@ import { EventService } from '../../../Services/event.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as jsPDF from 'jspdf';
 import { User } from 'src/app/models/user.model';
+import {userService} from "../../../Services/AuthANDUser/user.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-affectation',
@@ -16,9 +18,9 @@ export class AffectationComponent implements OnInit {
   user: User = new User();
   id: number
   event: Event
-  iduser: number 
+  iduser: number
 
-  constructor(private eventService: EventService, private router: Router , private route: ActivatedRoute) {}
+  constructor(private UserService: userService,private eventService: EventService, private router: Router , private route: ActivatedRoute,) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -32,6 +34,8 @@ export class AffectationComponent implements OnInit {
   }
 
   Affectation() {
+
+    console.log(this.user.login);
     this.eventService.Affectation(this.id, this.user).subscribe(
       (data) => {
         console.log(data);

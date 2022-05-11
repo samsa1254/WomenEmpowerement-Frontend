@@ -3,7 +3,6 @@ import { userService } from '../../Services/AuthANDUser/user.service';
 import {User} from "../../models/user";
 import {FormControl,FormGroup,Validators} from '@angular/forms';
 import {Router} from "@angular/router";
-import {async} from "rxjs";
 
 @Component({
   selector: 'app-adduser',

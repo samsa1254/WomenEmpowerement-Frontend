@@ -5,11 +5,11 @@
         <hr />
         <div class="card-body">
           <form (ngSubmit)="onSubmit()">
-  
-    
+
+
             <div class="form-group">
               <label> iduser</label>
-              <input type="number" name="iduser" class="form-control" id="iduser" [(ngModel)]="user.iduser"  >
+              <input type="number" name="iduser" class="form-control" id="iduser" [(ngModel)]="iduser"  >
             </div>
 
             <!-- <div class="form-group">
@@ -35,25 +35,25 @@
               <label> Name</label>
               <input type="text" name="name" class="form-control" id="name" [(ngModel)]="user.name"  >
             </div>
-  
+
             <div class="form-group">
               <label>lastname</label>
               <input  name="lastname" type="text" class="form-control" id="lastname" [(ngModel)]="user.lastname"  >
             </div>
-  
-            
+
+
             <div class="form-group">
               <label>login</label>
               <input  name="login"  type="text" class="form-control" id="login" [(ngModel)]="user.login"  >
             </div>
-           
-  
+
+
             <div class="form-group">
               <label>password</label>
               <input  name="password"  type="password" class="form-control" id="password" [(ngModel)]="user.password"  >
             </div>
-  
-  
+
+
             <div class="form-group">
               <label>role</label>
               <select class="form-control" name="role" id="role" [(ngModel)]="user.role">
@@ -63,9 +63,9 @@
                 <option value="tutor">tutor</option>
               </select>
             </div>
-  
-  
-            
+
+
+
             <div class="form-group">
               <label>sexe</label>
               <select class="form-control" name="sexe" id="sexe" [(ngModel)]="user.sexe">
@@ -73,21 +73,20 @@
                 <option value="Women">Women</option>
               </select>
             </div> -->
-  
-  
+
+
 
             <br />
             <button class="btn btn-success" type="submit">Submit</button>
             <button routerLink="/home/events"   style="margin-left: 400px" class="btn btn-warning" type="Cancel">Cancel</button>
-  
+
           </form>
         </div>
       </div>
     </div>
   </div>
-  
 
 
 
 
-  
+
