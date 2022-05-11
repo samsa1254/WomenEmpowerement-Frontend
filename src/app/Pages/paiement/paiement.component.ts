@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-paiement',
@@ -19,9 +20,15 @@ export class PaiementComponent implements OnInit {
   expYear: number;
   cvc: number;
   userAmount:number;
-  constructor(private evService: CagnotteService, private router: Router) {}
+
+  token: string|undefined;
+
+  constructor(private evService: CagnotteService, private router: Router) {
+    this.token = undefined;
+  }
 
   ngOnInit(): void {}
+
   Pay() {this.evService.pay(this.idc,this.carta,this.expMonth,this.expYear,this.cvc,this.userAmount).subscribe((data) => {
           console.log(data);
           this.goToPay();
@@ -39,4 +46,17 @@ export class PaiementComponent implements OnInit {
   onSubmit() {
     this.Pay();
   }
+
+//--- Recaptcha --- // 
+public send(form: NgForm): void {
+  if (form.invalid) {
+    for (const control of Object.keys(form.controls)) {
+      form.controls[control].markAsTouched();
+    }
+    return;
+  }
+
+  console.debug(`Token [${this.token}] generated`);
+}
+
 }

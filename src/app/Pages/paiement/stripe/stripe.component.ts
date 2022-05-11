@@ -24,12 +24,13 @@ export class StripeComponent implements OnInit {
     this.evService
       .CreateUserStripe(this.user.iduser, this.user)
       .subscribe((data) => {
-        console.log(data);
         this.goToCreateCard();
-        let body = JSON.parse(JSON.stringify(data)).Responsebody;
-      console.log(body);  
-      });
-  }
+      },
+      (error) => {console.log(error);
+        this.goToCreateCard();
+      }
+    );
+}
 
   goToCreateCard(){
     this.router.navigate(['/home/CreateCard']);

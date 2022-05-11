@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: false,
+  recaptcha: {
+    siteKey: '6Lc_UuEfAAAAAIdnPgkS8Y3z0DcmlVFtj9zXv5ld',
+  },
 };
