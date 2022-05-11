@@ -31,6 +31,11 @@ import { UpdatepostComponent } from './Pages/acceuil/updatepost/updatepost.compo
 import { CagnottesComponent } from './Pages/cagnottes/cagnottes.component';
 import { AddCagnotteComponent } from './Pages/cagnottes/add-cagnotte/add-cagnotte.component';
 import { DetailsCagnottesComponent } from './Pages/cagnottes/details-cagnottes/details-cagnottes.component';
+import { PaiementComponent } from './Pages/paiement/paiement.component';
+import { StripeComponent } from './Pages/paiement/stripe/stripe.component';
+import { AffectationComponent } from './Pages/events/affectation/affectation.component';
+import { CreateCardComponent } from './Pages/paiement/create-card/create-card.component';
+import { SendMailComponent } from './Pages/events/send-mail/send-mail.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { LogoutComponent } from './Pages/logout/logout.component';
 
@@ -59,6 +64,11 @@ import { LogoutComponent } from './Pages/logout/logout.component';
     CagnottesComponent,
     AddCagnotteComponent,
     DetailsCagnottesComponent,
+    PaiementComponent,
+    StripeComponent,
+    AffectationComponent,
+    CreateCardComponent,
+    SendMailComponent,
 
     UserComponent,
     AdduserComponent,

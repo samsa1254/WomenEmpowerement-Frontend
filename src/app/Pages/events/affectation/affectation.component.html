@@ -1,0 +1,93 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+      <div class="row">
+        <h3 class="text-center"> Affectation </h3>
+        <hr />
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()">
+  
+    
+            <div class="form-group">
+              <label> iduser</label>
+              <input type="number" name="iduser" class="form-control" id="iduser" [(ngModel)]="user.iduser"  >
+            </div>
+
+            <!-- <div class="form-group">
+              <label>cin</label>
+              <input  name="cin" type="number" class="form-control" id="cin" [(ngModel)]="user.cin" >
+            </div>
+
+            <div class="form-group">
+              <label>datedenaissaince</label>
+              <input name="datedenaissaince" type="date" class="form-control" id="datedenaissaince" [(ngModel)]="user.datedenaissaince" >
+            </div>
+
+            <div class="form-group">
+              <label>email</label>
+              <input name="email"  type="email" class="form-control" id="email" [(ngModel)]="user.email" >
+            </div>
+
+            <div class="form-group">
+              <label>isEnabled</label>
+              <input name="isEnabled"  type="number" class="form-control" id="isEnabled" [(ngModel)]="user.isEnabled" >
+            </div>
+            <div class="form-group">
+              <label> Name</label>
+              <input type="text" name="name" class="form-control" id="name" [(ngModel)]="user.name"  >
+            </div>
+  
+            <div class="form-group">
+              <label>lastname</label>
+              <input  name="lastname" type="text" class="form-control" id="lastname" [(ngModel)]="user.lastname"  >
+            </div>
+  
+            
+            <div class="form-group">
+              <label>login</label>
+              <input  name="login"  type="text" class="form-control" id="login" [(ngModel)]="user.login"  >
+            </div>
+           
+  
+            <div class="form-group">
+              <label>password</label>
+              <input  name="password"  type="password" class="form-control" id="password" [(ngModel)]="user.password"  >
+            </div>
+  
+  
+            <div class="form-group">
+              <label>role</label>
+              <select class="form-control" name="role" id="role" [(ngModel)]="user.role">
+                <option value="Admin">Admin</option>
+                <option value="women">women</option>
+                <option value="expert">expert</option>
+                <option value="tutor">tutor</option>
+              </select>
+            </div>
+  
+  
+            
+            <div class="form-group">
+              <label>sexe</label>
+              <select class="form-control" name="sexe" id="sexe" [(ngModel)]="user.sexe">
+                <option value="Men">Men</option>
+                <option value="Women">Women</option>
+              </select>
+            </div> -->
+  
+  
+
+            <br />
+            <button class="btn btn-success" type="submit">Submit</button>
+            <button routerLink="/home/events"   style="margin-left: 400px" class="btn btn-warning" type="Cancel">Cancel</button>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+  

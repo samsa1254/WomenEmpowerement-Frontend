@@ -28,14 +28,23 @@ export class CagnottesComponent implements OnInit {
     this.router.navigate(['home/detailscagnotte', id]);
   }
 
-  // updateOffer(id: number){
-  //   this.router.navigate(['home/updateoffer', id]);
-  // }
-
   deleteOffer(id: number){
     this.oService.deleteCagnotte(id).subscribe( data => {
       console.log(data);
       this.getOffers();
     })
   }
+// ------- Payement --------- // 
+CreatCustomer (){
+  this.router.navigate(['home/CreateCustomer']);
+ }
+
+
+ CreateCardStripe (){
+  this.router.navigate(['home/CreateCard']);
+ }
+
+ Pay (){
+  this.router.navigate(['home/paiement']);
+ }
   }
