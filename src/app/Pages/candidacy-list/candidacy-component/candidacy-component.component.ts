@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Candidacy } from 'src/app/models/candidacy';
-import { CandidacyServicesService } from 'src/app/Services/candidacy-services.service';
-import { Offer } from 'src/app/models/offer.model';
+import { Candidacy } from '../../../models/candidacy';
+import { CandidacyServicesService } from '../../../Services/candidacy-services.service';
 @Component({
   selector: 'app-candidacy-component',
   templateUrl: './candidacy-component.component.html',

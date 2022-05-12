@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="card col-md-6 offset-md-3 offset-md-3">
+    <div class="row">
+      <h3 class="text-center">  RESET YOUR PASSWORD </h3>
+      <hr />
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit(idf)">
+
+
+
+          <div class="form-group">
+            <label>Login</label>
+            <input type="text" class="form-control" id="subject" [(ngModel)]="idf"
+                   name="subject">
+          </div>
+          <br />
+          <button class="btn btn-success" type="submit">Submit</button>
+          <a  routerLink="/login" class="nav-link" class="btn btn-secondary" style="margin-left: 60%" role="button" > < < GO BACK </a>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

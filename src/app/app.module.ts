@@ -1,7 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -61,6 +60,7 @@ import { SendMailComponent } from './Pages/events/send-mail/send-mail.component'
 
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
 import { environment } from '../environments/environment';
+import { ForgetpassComponent } from './Pages/forgetpass/forgetpass.component';
 
 
 
@@ -112,7 +112,9 @@ import { environment } from '../environments/environment';
     RegisterComponent,
     LogoutComponent,
     CandidacyComponentComponent,
-    CandidacyUpdateComponent
+    CandidacyUpdateComponent,
+    ForgetpassComponent
+
 
 
   ],
@@ -122,17 +124,12 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-  
-
     RecaptchaModule,
     RecaptchaFormsModule,
     NgxPaginationModule
-
   ],
+
+
   providers: [
     {
       provide:HTTP_INTERCEPTORS, useClass:authInterceptor, multi:true

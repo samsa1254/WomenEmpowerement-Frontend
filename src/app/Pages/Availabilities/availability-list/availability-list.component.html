@@ -1,6 +1,6 @@
 <div class = "row">
   <h2> Availibility List</h2>
-  <button routerLink="/home/addoffer" class = "btn btn-primary" style="margin-left: 10px">Add Availibility</button>
+  <button routerLink="/home/Availibility/add-disp" class = "btn btn-primary" style="margin-left: 10px">Add Availibility</button>
 </div>
 <table class = "table table-striped table-bordered">
   <thead>
@@ -8,8 +8,8 @@
     <th>DateDebut</th>
     <th>DateFin</th>
     <th>etat</th>
-    
-    
+
+
   </tr>
   </thead>
   <tbody>
@@ -18,13 +18,11 @@
     <td>{{disp.datefin}}</td>
     <td>{{disp.etat}}</td>
 
-    
-    
+
+
     <td>
 
-      <button  class = "btn btn-primary"> Update</button>
       <button (click) = "deletedisp(disp.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-      <button  class = "btn btn-primary" style="margin-left: 10px"> View</button>
 
     </td>
 

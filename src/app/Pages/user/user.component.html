@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
-  <ul class="navbar-nav">
+<nav style="background: #ffecec" class="navbar navbar-expand-sm ">
+  <ul style="background: #ffecec" class="navbar-nav">
 
     <li style="margin-right: 10% " class="nav-item ">
       <a  routerLink="/home/user/" class="nav-link" class="btn btn-primary active" role="button" >Users List</a>
@@ -19,6 +19,8 @@
 <br/>
 
 <div class="body table-responsive">
+
+
   <table class="table table-bordered">
     <thead>
     <tr>
@@ -30,7 +32,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let u of UserList">
+    <tr *ngFor="let u of UserList | paginate
+        : {
+        itemsPerPage: tableSize,
+        currentPage: page,
+        totalItems: count
+        };
+        let i = index">
       <th scope="row">{{u.iduser}}</th>
       <td>{{u.name}}</td>
       <td>{{u.email}}</td>
@@ -41,3 +49,14 @@
     </tbody>
   </table>
 </div>
+
+<div class="d-flex justify-content-center">
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableDataChange($event)"
+  >
+  </pagination-controls>
+</div>
+
+

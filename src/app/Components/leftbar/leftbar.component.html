@@ -33,6 +33,63 @@
       <div id="two-column-menu"></div>
       <ul class="navbar-nav" id="navbar-nav">
         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link menu-link"
+            routerLink="/home/acceuil"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sidebarDashboards"
+          >
+            <i class="ri-add-box-fill"></i>
+            <span data-key="t-dashboards">Acceuil </span>
+          </a>
+          <div class="collapse menu-dropdown" id="acceuilid">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <a
+                  href="dashboard-analytics.html"
+                  class="nav-link"
+                  data-key="t-analytics"
+                >
+                  Analytics
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="dashboard-crm.html" class="nav-link" data-key="t-crm">
+                  CRM
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html" class="nav-link" data-key="t-ecommerce">
+                  Ecommerce
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="dashboard-crypto.html"
+                  class="nav-link"
+                  data-key="t-crypto"
+                >
+                  Crypto
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="dashboard-projects.html"
+                  class="nav-link"
+                  data-key="t-projects"
+                >
+                  Projects
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+
         <li class="nav-item">
           <a
             class="nav-link menu-link"
@@ -42,20 +99,10 @@
             aria-expanded="false"
             aria-controls="sidebarDashboards"
           >
-            <i class="ri-dashboard-2-line"></i>
+            <i class="ri-album-fill"></i>
             <span data-key="t-dashboards">Events </span>
           </a>
-          <a
-            class="nav-link menu-link"
-            routerLink="/home/Availibility/add-disp"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="sidebarDashboards"
-          >
-            <i class="ri-dashboard-2-line"></i>
-            <span data-key="t-dashboards">Appointments </span>
-          </a>
+
           <a
             class="nav-link menu-link"
             routerLink="/home/Availibility/retrieve-all-disps"
@@ -67,7 +114,7 @@
             <i class="ri-dashboard-2-line"></i>
             <span data-key="t-dashboards">Availabilities </span>
           </a>
-          <a
+          <a  *ngIf="user.role == 'Admin'"
             class="nav-link menu-link"
             routerLink="/home/Report/retrieve-all-reps"
             data-bs-toggle="collapse"
@@ -80,8 +127,9 @@
           </a>
 
           <a
+            *ngIf="user.role != 'Admin'"
             class="nav-link menu-link"
-            routerLink="/home/Report/myreports"
+            routerLink="/home/Report/myreports/:id"
             data-bs-toggle="collapse"
             role="button"
             aria-expanded="false"
@@ -158,61 +206,7 @@
             </ul>
           </div>
         </li>
-        <li class="nav-item">
-          <a
-            class="nav-link menu-link"
-            routerLink="/home/acceuil"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="sidebarDashboards"
-          >
-            <i class="ri-dashboard-2-line"></i>
-            <span data-key="t-dashboards">Acceuil </span>
-          </a>
-          <div class="collapse menu-dropdown" id="acceuilid">
-            <ul class="nav nav-sm flex-column">
-              <li class="nav-item">
-                <a
-                  href="dashboard-analytics.html"
-                  class="nav-link"
-                  data-key="t-analytics"
-                >
-                  Analytics
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="dashboard-crm.html" class="nav-link" data-key="t-crm">
-                  CRM
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.html" class="nav-link" data-key="t-ecommerce">
-                  Ecommerce
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  href="dashboard-crypto.html"
-                  class="nav-link"
-                  data-key="t-crypto"
-                >
-                  Crypto
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  href="dashboard-projects.html"
-                  class="nav-link"
-                  data-key="t-projects"
-                >
-                  Projects
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
+        <li *ngIf="user.role == 'Admin'" class="nav-item">
           <a
             class="nav-link menu-link"
             routerLink="/home/user"

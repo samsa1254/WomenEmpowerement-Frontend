@@ -15,15 +15,15 @@ import { User } from '../../../models/user';
 export class AddAvailabilityComponent implements OnInit {
 
   Disp: Disponibilite = new Disponibilite();
-  
-  
+
+
   constructor(private dispService: DisponibiliteService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   saveDisp(){
-   
+
     this.dispService.createdisp(this.Disp).subscribe( data =>{
       console.log(data);
       this.goToEventsList();
@@ -32,7 +32,7 @@ export class AddAvailabilityComponent implements OnInit {
   }
 
   goToEventsList(){
-    this.router.navigate(['/home/events']);
+    this.router.navigate(['/home/Availibility/retrieve-all-disps']);
   }
 
   onSubmit(){

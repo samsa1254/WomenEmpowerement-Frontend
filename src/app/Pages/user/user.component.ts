@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {userService} from "../../Services/AuthANDUser/user.service";
 import {User} from "../../models/user";
 import { Router } from '@angular/router';
+import {Observable, startWith, withLatestFrom} from "rxjs";
+import {map} from "rxjs/operators";
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -14,6 +16,13 @@ export class UserComponent implements OnInit {
   studentlist:any;
   board: string;
   errorMessage: string;
+
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 3;
+  tableSizes: any = [3, 6, 9, 12];
+
+
   constructor(private userservice:userService , private router: Router ) { }
 
   ngOnInit(): void {
@@ -67,5 +76,11 @@ export class UserComponent implements OnInit {
         error => console.log(error));
   }
 
+  onTableDataChange(user: any) {
+    this.page = user;
+    this.ngOnInit();
+  }
+
 
 }
+

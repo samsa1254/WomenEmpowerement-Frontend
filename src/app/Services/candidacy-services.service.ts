@@ -1,9 +1,9 @@
- import { Candidacy } from 'src/app/models/candidacy';
  import { Injectable } from '@angular/core';
  import { HttpClient, HttpHeaders } from '@angular/common/http';
  import { HttpParams } from '@angular/common/http';
  import { Observable } from 'rxjs';
  import {Offer} from "../models/offer.model";
+ import {Candidacy} from "../models/candidacy";
 
 @Injectable({
   providedIn: 'root'

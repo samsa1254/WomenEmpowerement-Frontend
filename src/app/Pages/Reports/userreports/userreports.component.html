@@ -1,6 +1,6 @@
 <div class = "row">
     <h2> My Reports</h2>
-    
+
   </div>
 
   <button routerLink="/home/Report/AddReport" class = "btn btn-primary" style="margin-left: 10px"> Send a new Report</button>
@@ -13,8 +13,8 @@
       <th>Status</th>
       <th>Actions</th>
 
-      
-      
+
+
     </tr>
     </thead>
     <tbody>
@@ -22,19 +22,18 @@
       <td>{{rep.subject}}</td>
       <td>{{rep.reportDate}}</td>
       <td>{{rep.status}}</td>
-  
-      
-      
+
+
+
       <td>
-  
+
         <button  (click) = "deleterep(rep.id)"class = "btn btn-primary" style="margin-left: 10px"> Cancel Report</button>
-        <button  (click) = "updaterep(rep.id)"class = "btn btn-primary" style="margin-left: 10px"> Update Report</button>
 
 
-  
+
       </td>
-  
-  
+
+
     </tr>
     </tbody>
   </table>
@@ -46,5 +45,4 @@
     >
     </pagination-controls>
   </div>
- 
-   
+

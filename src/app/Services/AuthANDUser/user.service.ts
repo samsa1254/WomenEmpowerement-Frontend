@@ -92,4 +92,9 @@ export class userService {
     return this._http.get(this.userUrl, { responseType: 'text' });
   }
 
+
+  forgetpass(id:string): Observable<any>{
+    return this._http.post("http://localhost:8089/SpringMVC/user/passwordreset/"+id,null);
+  }
+
 }

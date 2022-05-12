@@ -7,7 +7,7 @@
                   totalItems: count
                 };
           let i = index">
-  <div style="display: flex ; justify-content: space-between "><h3> A New Post </h3>
+  <div ng style="display: flex ; justify-content: space-between "><h3> {{u.user.name}} {{u.user.lastname}} </h3>
     <div>
       <button *ngIf="update" routerLink="/home/updatepost/{{u.idPublication}}" class = "btn btn-primary"> Update</button>
 

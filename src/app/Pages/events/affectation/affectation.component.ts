@@ -3,9 +3,9 @@ import { Event } from '../../../models/event.model';
 import { EventService } from '../../../Services/event.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as jsPDF from 'jspdf';
-import { User } from 'src/app/models/user.model';
 import {userService} from "../../../Services/AuthANDUser/user.service";
 import {Observable} from "rxjs";
+import {User} from "../../../models/user.model";
 
 @Component({
   selector: 'app-affectation',

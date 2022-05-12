@@ -1,6 +1,6 @@
 <div class = "row">
     <h2> Reports List</h2>
-    
+
   </div>
   <table class = "table table-striped table-bordered">
     <thead>
@@ -10,8 +10,8 @@
       <th>Status</th>
       <th>Actions</th>
 
-      
-      
+
+
     </tr>
     </thead>
     <tbody>
@@ -19,19 +19,19 @@
       <td>{{rep.subject}}</td>
       <td>{{rep.reportDate}}</td>
       <td>{{rep.status}}</td>
-  
-      
-      
+
+
+
       <td>
-  
+
         <button (click) = "TreatReportByblocking(rep.id)" class = "btn btn-primary" style="margin-left: 10px"> Treat Report By Blocking User</button>
         <button  (click) = "TreatReportByUnblocking(rep.id)"class = "btn btn-primary" style="margin-left: 10px"> Treat Report By Unblocking User</button>
 
 
-  
+
       </td>
-  
-  
+
+
     </tr>
     </tbody>
   </table>

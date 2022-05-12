@@ -5,8 +5,9 @@ import { OfferService } from '../../../Services/offer-services.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Candidacy } from 'src/app/models/candidacy';
-import { CandidacyServicesService } from 'src/app/Services/candidacy-services.service';
+import {Candidacy} from "../../../models/candidacy";
+import {CandidacyServicesService} from "../../../Services/candidacy-services.service";
+
 
 @Component({
   selector: 'app-offer-details',

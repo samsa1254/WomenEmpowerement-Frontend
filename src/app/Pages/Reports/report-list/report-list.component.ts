@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Report } from 'app/models/report.model';
 import { ReportService } from '../../../Services/report.service' ;
 import { Router } from '@angular/router';
+import {User} from "../../../models/user";
+import {CandidacyServicesService} from "../../../Services/candidacy-services.service";
+import {userService} from "../../../Services/AuthANDUser/user.service";
+import {TokenStorageService} from "../../../Services/AuthANDUser/token-storage.service";
 
 @Component({
   selector: 'app-report-list',
@@ -11,11 +15,18 @@ import { Router } from '@angular/router';
 export class ReportListComponent implements OnInit {
 
   reps: Report[];
-  
+  user : User ;
 
-  constructor(private repService: ReportService, private router: Router) { }
+
+  constructor(private repService: ReportService , private userservice:userService , private router: Router,private token: TokenStorageService) { }
 
   ngOnInit(): void {
+    sessionStorage.getItem("token");
+    //console.log(sessionStorage.getItem("token"))
+    this.userservice.findme().subscribe(
+      (data: User) => { this.user = data ; console.log('aaaa',data) }
+    );
+
     this.getreps();
   }
 
@@ -28,7 +39,7 @@ export class ReportListComponent implements OnInit {
     });
   }
 
-  
+
 
   updateOffer(id: number){
     this.router.navigate(['home/updateoffer', id]);

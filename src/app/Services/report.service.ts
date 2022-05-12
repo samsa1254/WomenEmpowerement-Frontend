@@ -9,7 +9,7 @@ import { Report } from '../models/report.model';
 export class ReportService {
 
   private baseURL = "http://localhost:8089/SpringMVC/Report/retrieve-all-reps";
-  private baseURL1 = "http://localhost:8089/SpringMVC/Report/retrieve-userReports";
+  private baseURL1 = "http://localhost:8089/SpringMVC/Report/retrieve-userReports/";
   private baseURL2 ='http://localhost:8089/SpringMVC/Event/getEventById';
   private baseURL3 ='http://localhost:8089/SpringMVC/Event/modify-event';
 
@@ -19,8 +19,9 @@ export class ReportService {
     return this.httpClient.get<Report[]>(`${this.baseURL}`);
   }
 
-  getuserrepList(): Observable<Report[]>{
-    return this.httpClient.get<Report[]>(`${this.baseURL1}`);
+  getuserrepList(id: number): Observable<Report[]>{
+    console.log(id+"3adnen");
+    return this.httpClient.get<Report[]>(`${this.baseURL1}${id}`);
   }
 
   createrep(rep: Report): Observable<Object>{

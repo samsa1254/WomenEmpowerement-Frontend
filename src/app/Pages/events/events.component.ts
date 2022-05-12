@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Event } from '../../models/event.model';
 import { EventService } from '../../Services/event.service';
 import { Router } from '@angular/router';
-// import * as jsPDF from 'jspdf';  
+// import * as jsPDF from 'jspdf';
 import { jsPDF } from 'jspdf';
+import {User} from "../../models/user.model";
 
-import { User } from 'src/app/models/user.model';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class EventsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEvents();
-    
+
   }
 
   private getEvents(){
@@ -36,7 +36,7 @@ export class EventsComponent implements OnInit {
     this.router.navigate(['home/detailsEvent', id]);
   }
 
-  
+
   updateEvent(id: number){
     this.router.navigate(['home/updateEvent', id]);
   }
@@ -57,7 +57,7 @@ export class EventsComponent implements OnInit {
    }
 
   SavePdf():void{
-    
+
   }
 
 

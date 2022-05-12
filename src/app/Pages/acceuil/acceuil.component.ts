@@ -43,8 +43,8 @@ export class AcceuilComponent implements OnInit {
 
     let list2 : Post[];
     this.postservice.getPosts().subscribe(data => {
-
-        this.PostList = data.reverse();
+        this.userservice.getUserById(1);
+        this.PostList = data;
         console.log(this.PostList);
       }
     );

@@ -1,3 +1,4 @@
+import {User} from "./user.model";
 
 export class Post {
   date : Date;
@@ -5,7 +6,7 @@ export class Post {
   post: string;
   state: string;
   time: time ;
-
+  user?:User ;
 
   constructor() {
 
