@@ -17,15 +17,19 @@ export class OfferService {
   }
 
   createOffer(offer: Offer): Observable<Object>{
-    return this.httpClient.post(`http://localhost:8089/SpringMVC/Offers/AddOffer`, offer );
+    return this.httpClient.post(`http://localhost:8089/SpringMVC/Offers/AddOffer`,offer );
   }
 
   getOfferById(id: number): Observable<Offer>{
     return this.httpClient.get<Offer>(`${this.baseURL}/${id}`);
   }
 
-  updateOffer(id: number, offer: Offer): Observable<Object>{
-    return this.httpClient.put(`${this.baseURL}/${id}`, offer);
+   getOfferByName(name: string): Observable<Offer>{
+      return this.httpClient.get<Offer>(`http://localhost:8089/SpringMVC/Offers/RetrieveOfferByName/${name}`);
+    }
+
+  updateOffer(offer: Offer): Observable<Object>{
+    return this.httpClient.put(`http://localhost:8089/SpringMVC/Offers/EditOffer`,offer);
   }
 
   deleteOffer(id: number): Observable<Object>{

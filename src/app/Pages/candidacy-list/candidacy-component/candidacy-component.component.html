@@ -1,0 +1,54 @@
+<div  class = "row" >
+  <button routerLink="/home/Offer" class = "btn btn-soft-success" style="margin-bottom: 20px">Go to Offers</button>
+  <tr>
+    <th><h2> Candidacies List :</h2></th>
+  </tr>
+</div>
+<table class = "table table-striped table-bordered">
+  <thead >
+  <tr>
+    <th>Approvation</th>
+    <th>id</th>
+    <th>Name</th>
+    <th>State</th>
+    <th>Dated On</th>
+    <th>CV</th>
+    <th>Offer_</th>
+    <th>User_</th>
+    <th>Manage</th>
+  </tr>
+  </thead>
+  <tbody>
+
+
+  <tr *ngFor = "let can of c | paginate: { itemsPerPage: tableSize, currentPage: page,totalItems: count };let i = index">
+    <th scope="row">{{can.id}}</th>
+
+    <td>
+      <button (click) = "ApproveCand(can.id,1)" class = "btn btn-success"></button>
+      <button (click) = "ApproveCand(can.id,2)" class = "btn btn-warning"></button>
+    </td>
+
+    <td>{{can.id}}</td>
+    <td>{{can.candidName}}</td>
+    <td>{{can.state}}</td>
+    <td>{{can.date_Of_Candid}}</td>
+    <td>{{can.cv}}</td>
+    <td>{{can.offer}}</td>
+    <td>{{can.user.iduser}}</td>
+
+    <td>
+      <button (click) = "updateCand(can.id)" class = "btn btn-danger" style="margin-left: 10px"> Modify </button>
+      <button (click) = "deleteCandid(can.id)" class = "btn btn-primary" style="margin-left: 10px"> Delete </button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+<div  style="margin-left: 650px">
+  <div class="d-flex justify-content-center">
+    <pagination-controls
+      previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)" >
+    </pagination-controls>
+  </div>
+</div>

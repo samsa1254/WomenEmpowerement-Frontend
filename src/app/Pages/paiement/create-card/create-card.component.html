@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+      <div class="row">
+        <h3 class="text-center"> Create Offer </h3>
+        <hr />
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()">
+  
+            <div class="form-group">
+                <label>customerId</label>
+                <input type="text" class="form-control" id="customerId" [(ngModel)]="customerId"
+                       name="customerId">
+              </div>
+
+              <div class="form-group">
+                <label>carta</label>
+                <input type="number" class="form-control" id="carta" [(ngModel)]="carta"
+                       name="carta">
+              </div>
+
+              <div class="form-group">
+                <label>expMonth</label>
+                <input type="number" class="form-control" id="expMonth" [(ngModel)]="expMonth"
+                       name="expMonth">
+              </div>
+
+              <div class="form-group">
+                <label>expYear</label>
+                <input type="number" class="form-control" id="idUser" [(ngModel)]="expYear"
+                       name="expYear">
+              </div>
+
+              <div class="form-group">
+                <label>cvc</label>
+                <input type="number" class="form-control" id="cvc" [(ngModel)]="cvc"
+                       name="cvc">
+              </div>
+
+  
+            <br />
+            <button class="btn btn-success" type="submit">Submit</button>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

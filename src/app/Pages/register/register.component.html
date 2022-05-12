@@ -1,0 +1,122 @@
+<div class="row">
+  <br/>
+  <h3 class="text-center"> Register </h3>
+  <br/>
+  <div class="card col-md-6 offset-md-3 offset-md-3">
+    <div class="row">
+
+      <hr />
+      <div class="card-body">
+        <form #f (ngSubmit)="onSubmit()">
+
+
+          <div class="form-group">
+            <label> Name</label>
+            <input type="text" name="name" class="form-control" id="name" [(ngModel)]="user.name"  >
+          </div>
+
+          <div class="form-group">
+            <label>lastname</label>
+            <input  name="lastname" type="text" class="form-control" id="lastname" [(ngModel)]="user.lastname"  >
+          </div>
+
+          <div class="form-group">
+            <label>datedenaissaince</label>
+            <input name="datedenaissaince" type="date" class="form-control" id="datedenaissaince" [(ngModel)]="user.datedenaissaince" >
+          </div>
+
+          <div class="form-group">
+            <label>cin</label>
+            <input  name="cin" type="number" class="form-control" id="cin" [(ngModel)]="user.cin" >
+          </div>
+
+
+          <div hidden class="form-group">
+
+            <input value="Women" name="sexe"  type="text" class="form-control" id="sexe" [(ngModel)]="user.sexe"  >
+
+          </div>
+
+          <div class="form-group">
+            <label>email</label>
+            <input name="email"  type="email" class="form-control" id="email" [(ngModel)]="user.email" >
+          </div>
+
+          <div class="form-group">
+            <label>login</label>
+            <input  name="login"  type="text" class="form-control" id="login" [(ngModel)]="user.login"  >
+          </div>
+
+
+          <div class="form-group">
+            <label>password</label>
+            <input  name="password"  type="password" class="form-control" id="password" [(ngModel)]="user.password"  >
+          </div>
+
+
+          <div hidden class="form-group">
+            <input value="women" name="role"  type="text" class="form-control" id="role" [(ngModel)]="user.role"  >
+          </div>
+
+
+          <div hidden class="form-group">
+            <label >isEnabled</label>
+            <input value=false name="isEnabled"  type="checkbox" class="form-control" id="isEnabled" [(ngModel)]="user.isEnabled"  >
+
+          </div>
+
+          <div hidden class="form-group">
+            <label>subscribtion</label>
+            <input name="subscribtion" type="date" class="form-control" id="subscribtion" [(ngModel)]="user.subscribtion" >
+          </div>
+
+          <div hidden class="form-group">
+            <label>adminsector</label>
+            <input  name="adminsector"  type="text" class="form-control" id="adminsector" [(ngModel)]="user.adminsector"  >
+          </div>
+
+          <div hidden class="form-group">
+            <label>tutorspeciality</label>
+            <input  name="tutorspeciality"  type="text" class="form-control" id="tutorspeciality" [(ngModel)]="user.tutorspeciality"  >
+          </div>
+
+          <div hidden class="form-group">
+            <label>tutortype</label>
+            <select [(ngModel)]="user.tutortype"  id="tutortype" class="form-control"  data-toggle="tooltip" data-placement="right" title="tutortype">
+              <option value="Internal">Internal</option>
+              <option value="External">External</option>
+            </select>
+          </div>
+
+
+          <div hidden class="form-group">
+            <label>expertspeciality</label>
+            <select [(ngModel)]="user.expertspeciality"  id="expertspeciality" class="form-control" data-toggle="tooltip" data-placement="right" title="expertspeciality">
+              <option value="psychiatrist">	psychiatrist</option>
+              <option value="lawyer">lawyer</option>
+            </select>
+          </div>
+
+
+          <div hidden class="form-group">
+            <label>expertadress</label>
+            <input  name="expertadress"  type="text" class="form-control" id="expertadress" [(ngModel)]="user.expertadress"  >
+          </div>
+
+
+          <div hidden class="form-group">
+            <label>expertnumber</label>
+            <input  name="expertnumber"  type="text" class="form-control" id="expertnumber" [(ngModel)]="user.expertnumber"  >
+          </div>
+
+
+
+          <br />
+
+          <button  class="btn btn-success" type="submit">Sign up</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

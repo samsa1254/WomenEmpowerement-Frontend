@@ -3,8 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Offer } from '../../../models/offer.model';
 import { OfferService } from '../../../Services/offer-services.service';
 import { NgModule } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
-// import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-update-offer',
@@ -28,7 +28,7 @@ export class UpdateOfferComponent implements OnInit {
    }
 
    onSubmit(){
-     this.oService.updateOffer(this.id, this.offer).subscribe( data =>{
+     this.oService.updateOffer(this.offer).subscribe( data =>{
        this.goToOfferList();
      }
      , error => console.log(error));
