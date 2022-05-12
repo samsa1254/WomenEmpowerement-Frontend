@@ -3,8 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Event } from 'src/app/models/event.model';
-import { EventService } from 'src/app/Services/event.service';
+import { Event } from '../../../models/event.model';
+import { EventService } from '../../../Services/event.service';
 
 @Component({
   selector: 'app-event-modify',

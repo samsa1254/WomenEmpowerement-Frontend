@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,16 @@ import { AddOfferComponent } from './Pages/offer-list/add-offer/add-offer.compon
 import { UpdateOfferComponent } from './Pages/offer-list/update-offer/update-offer.component';
 import { OfferListComponent } from './Pages/offer-list/offer-list.component';
 import { OfferDetailsComponent } from './Pages/offer-list/offer-details/offer-details.component';
+import { AddAvailabilityComponent } from './Pages/Availabilities/add-availability/add-availability.component';
+import { AvailabilityListComponent } from './Pages/Availabilities/availability-list/availability-list.component';
+import { AddReportComponent } from './Pages/Reports/add-report/add-report.component';
+import { ReportListComponent } from './Pages/Reports/report-list/report-list.component';
+import { UpdateReportComponent } from './Pages/Reports/update-report/update-report.component';
+import { UpdateAvailablityComponent } from './update-availablity/update-availablity.component';
+import { TreatrepbyblockingComponent } from './Pages/Reports/treatrepbyblocking/treatrepbyblocking.component';
+import { TreatrepbyunblockingComponent } from './Pages/Reports/treatrepbyunblocking/treatrepbyunblocking.component';
+import { UserreportsComponent } from './Pages/Reports/userreports/userreports.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -35,15 +45,26 @@ import { OfferDetailsComponent } from './Pages/offer-list/offer-details/offer-de
     UpdateOfferComponent,
     OfferListComponent,
     OfferDetailsComponent,
+    AddAvailabilityComponent,
+    AvailabilityListComponent,
+    AddReportComponent,
+    ReportListComponent,
+    UpdateReportComponent,
+    UpdateAvailablityComponent,
+    TreatrepbyblockingComponent,
+    TreatrepbyunblockingComponent,
+    UserreportsComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

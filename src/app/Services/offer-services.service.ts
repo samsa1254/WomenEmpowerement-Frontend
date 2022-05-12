@@ -1,7 +1,7 @@
  import { Injectable } from '@angular/core';
  import { HttpClient } from '@angular/common/http';
  import { Observable } from 'rxjs';
- import { Offer } from 'src/app/models/offer.model';
+ import { Offer } from '../models/offer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,4 +31,5 @@ export class OfferService {
   deleteOffer(id: number): Observable<Object>{
     return this.httpClient.delete(`http://localhost:8089/SpringMVC/Offers/DeleteOffer/${id}`);
   }
+  
 }
