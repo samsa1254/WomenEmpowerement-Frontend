@@ -22,25 +22,25 @@
 
 
   <tr *ngFor = "let can of c | paginate: { itemsPerPage: tableSize, currentPage: page,totalItems: count };let i = index">
+    <th scope="row">{{can.id}}</th>
 
     <td>
       <button (click) = "ApproveCand(can.id,1)" class = "btn btn-success"></button>
       <button (click) = "ApproveCand(can.id,2)" class = "btn btn-warning"></button>
     </td>
 
-    <td scope="row">{{can.id}}</td>
+    <td>{{can.id}}</td>
     <td>{{can.candidName}}</td>
     <td>{{can.state}}</td>
     <td>{{can.date_Of_Candid}}</td>
     <td>{{can.cv}}</td>
-    <td>{{can.offer.id}}</td>
+    <td>{{can.offer}}</td>
     <td>{{can.user.iduser}}</td>
 
-<td>
-  <button (click) = "updateCand(can.id)" class = "btn btn-danger" style="margin-left: 10px"> Modify </button>
-  <button (click) = "deleteCandid(can.id)" class = "btn btn-primary" style="margin-left: 10px"> Delete </button>
-</td>
-
+    <td>
+      <button (click) = "updateCand(can.id)" class = "btn btn-danger" style="margin-left: 10px"> Modify </button>
+      <button (click) = "deleteCandid(can.id)" class = "btn btn-primary" style="margin-left: 10px"> Delete </button>
+    </td>
 
   </tr>
   </tbody>

@@ -1,8 +1,8 @@
 <div class = "row">
-  <button routerLink="/home/candidacy" class = "btn btn-soft-success" style="margin-bottom: 20px">Go to Candidacy</button>
-  <tr>
-    <th><h2> Opportunities List :</h2></th>
-    <th> <button routerLink="/home/addoffer" class = "btn btn-soft-success" style="margin-bottom: 8px">+</button></th>
+  <button *ngIf="user.role == 'Admin'" routerLink="/home/candidacy" class = "btn btn-soft-success" style="margin-bottom: 20px">Go to Candidacy</button>
+  <tr >
+    <th ><h2> Opportunities List :</h2></th>
+    <th > <button *ngIf="user.role == 'Admin'"  routerLink="/home/addoffer" class = "btn btn-soft-success" style="margin-bottom: 8px">+</button></th>
 
   </tr>
 </div>
@@ -16,13 +16,13 @@
     <th style="width:5%">Location</th>
     <th style="width:5%">Salary</th>
     <th style="width:5%">Due on</th>
-    <th style="width:5%">Action</th>
-    <th style="width:50%">Manage</th>
+    <th  style="width:5%">Action</th>
+    <th *ngIf="user.role == 'Admin'" style="width:50%">Manage</th>
 
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor = "let Offer of offers | paginate: { itemsPerPage: tableSize, currentPage: page,totalItems: count };let i = index">
+  <tr  *ngFor = "let Offer of offers | paginate: { itemsPerPage: tableSize, currentPage: page,totalItems: count };let i = index">
     <td>{{Offer.id}}</td>
     <td>{{Offer.name}}</td>
     <td>{{Offer.type}}</td>
@@ -31,12 +31,12 @@
     <td>{{Offer.salary}}</td>
     <td>{{Offer.date_Interview}}</td>
     <td>
-      <button (click) = "PostOffer()" class = "btn btn-primary">Aplly</button>
+      <button  (click) = "Posti(Offer.id)" class = "btn btn-primary">Aplly</button>
     </td>
-    <td>
-      <button (click) = "updateOffer(Offer.id)" class = "btn btn-primary">Edit</button>
-      <button (click) = "deleteOffer(Offer.id)" class = "btn btn-danger">Remove</button>
-      <button (click) = "offerDetails(Offer.id)" class = "btn btn-primary">show</button>
+    <td *ngIf="user.role == 'Admin'">
+      <button *ngIf="user.role == 'Admin'" (click) = "updateOffer(Offer.id)" class = "btn btn-primary">Edit</button>
+      <button *ngIf="user.role == 'Admin'" (click) = "deleteOffer(Offer.id)" class = "btn btn-danger">Remove</button>
+      <button *ngIf="user.role == 'Admin'" (click) = "offerDetails(Offer.id)" class = "btn btn-primary">show</button>
     </td>
 
   </tr>

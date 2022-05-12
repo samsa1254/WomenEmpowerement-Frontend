@@ -3,6 +3,7 @@
  import { HttpClient, HttpHeaders } from '@angular/common/http';
  import { HttpParams } from '@angular/common/http';
  import { Observable } from 'rxjs';
+ import {Offer} from "../models/offer.model";
 
 @Injectable({
   providedIn: 'root'
@@ -27,10 +28,11 @@ getCandidByOfferList(){
     return this.httpClient.get<Candidacy>(`http://localhost:8089/SpringMVC/Candidacy/GetCandid/${id}`);
   }
 
-   PostOff(): Observable<any>{
-   var k = 34;
-      return this.httpClient.post(`http://localhost:8089/SpringMVC/Candidacy/Affect/${k}`,+k);
-    }
+   PostOff2(id: number,id2:number): Observable<any>{
+     return this.httpClient.post('http://localhost:8089/SpringMVC/Candidacy/Affect/' + id + '/' + id2, this.httpOptions);
+   }
+
+
 
      CandByU(id: number){
         return this.httpClient.get<Candidacy[]>(`http://localhost:8089/SpringMVC/Candidacy/GetCandidbyuser`);

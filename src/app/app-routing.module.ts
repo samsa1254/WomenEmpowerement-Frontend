@@ -5,7 +5,6 @@ import { HomeComponent } from './Pages/home/home.component';
 
 import { AcceuilComponent } from "./Pages/acceuil/acceuil.component";
 
-import {AcceuilComponent} from "./Pages/acceuil/acceuil.component";
 import {UserComponent} from "./Pages/user/user.component";
 import {AdduserComponent} from "./Pages/adduser/adduser.component";
 import {UpdateuserComponent} from "./Pages/updateuser/updateuser.component";
@@ -23,7 +22,6 @@ import { CandidacyComponentComponent } from './Pages/candidacy-list/candidacy-co
 import { CandidacyUpdateComponent } from './Pages/candidacy-list/candidacy-update/candidacy-update.component';
 
 
- const routes: Routes = [
 
 import {CreatepostComponent} from "./Pages/acceuil/createpost/createpost.component";
 import {UpdatepostComponent} from "./Pages/acceuil/updatepost/updatepost.component";

@@ -59,4 +59,8 @@ onTableDataChange(event: any) {
   this.getcand();
   }
 
+
+
+
+
 }

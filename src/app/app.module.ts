@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,8 +12,6 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { EventsComponent } from './Pages/events/events.component';
 import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
 
-import {HttpClientModule} from "@angular/common/http";
-import { ReactiveFormsModule } from '@angular/forms';
 
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { UserComponent } from './Pages/user/user.component';
@@ -54,7 +51,6 @@ import { SendMailComponent } from './Pages/events/send-mail/send-mail.component'
 
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
 import { environment } from '../environments/environment';
-import {NgxPaginationModule} from "ngx-pagination";
 
 
 @NgModule({
@@ -71,18 +67,6 @@ import {NgxPaginationModule} from "ngx-pagination";
     UpdateOfferComponent,
     OfferListComponent,
     OfferDetailsComponent,
-
-    CandidacyComponentComponent,
-    CandidacyUpdateComponent
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    NgxPaginationModule
-
     EventsComponent,
 
 
@@ -107,20 +91,21 @@ import {NgxPaginationModule} from "ngx-pagination";
     ProfileComponent,
     RegisterComponent,
     LogoutComponent,
+    CandidacyComponentComponent,
+    CandidacyUpdateComponent
 
   ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
+    NgxPaginationModule
 
-    imports: [
-        BrowserModule,
-        ReactiveFormsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        RecaptchaModule,
-        RecaptchaFormsModule,
-        NgxPaginationModule
-
-    ],
+  ],
   providers: [
     {
       provide:HTTP_INTERCEPTORS, useClass:authInterceptor, multi:true
