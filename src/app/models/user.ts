@@ -1,4 +1,5 @@
 
+
 export class User {
 
   public adminsector: string;
@@ -24,5 +25,6 @@ export class User {
 
 
 }
+
 
 
